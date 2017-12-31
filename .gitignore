@@ -43,4 +43,4 @@ htmlcov
 .coverage.*
 *,cover
 
-config.py
+instance/*
