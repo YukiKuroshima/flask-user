@@ -17,13 +17,13 @@ git clone https://github.com/YukiKuroshima/docker-flask-mysql.git .
 
 3. Start up the docker containers
 ```
-docker-compose up
+docker-compose up --build
 ```
 
 4. Create tables and seed some data
 ```
-docker-compose run users-services python manage.py recreate_db
-docker-compose run users-services python manage.py seed_db
+docker-compose run users-service python manage.py recreate_db
+docker-compose run users-service python manage.py seed_db
 ```
 
 5. Go to your browser and type below
