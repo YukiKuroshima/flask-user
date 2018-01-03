@@ -12,7 +12,7 @@ cd myproject
 
 2. Clone this repo
 ```
-git clone https://github.com/YukiKuroshima/docker-flask-mysql.git .
+git clone https://github.com/YukiKuroshima/flask-user.git .
 ```
 
 3. Start up the docker containers
