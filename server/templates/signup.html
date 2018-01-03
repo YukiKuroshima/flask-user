@@ -1,1 +1,10 @@
+{% from "_form_field.html" import render_field %}
 Sign Up
+<form action="/signup" method="POST">
+    {{ form.csrf_token }}
+    {{ render_field(form.email) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.confirm) }}
+    {{ render_field(form.recaptcha) }}
+    <input type="submit" value="Submit">
+</form>

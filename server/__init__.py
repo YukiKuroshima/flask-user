@@ -4,11 +4,12 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
+from flask_mail import Mail
 
 
 # instantiate the db
 db = SQLAlchemy()
+mail = Mail()
 
 
 def create_app():
@@ -16,15 +17,15 @@ def create_app():
     # instantiate the app
     app = Flask(__name__)
 
-    # enable CORS
-    CORS(app)
-
     # set config
     app_settings = os.getenv('APP_SETTINGS')
     app.config.from_object(app_settings)
 
     # set up extensions
     db.init_app(app)
+
+    # Mail setting
+    mail.init_app(app)
 
     # register blueprints
     from server.views.temp import user_blueprint
